@@ -19,6 +19,8 @@ public class RoomScript : MonoBehaviour
 
 	private List<MemberScript> m_assignedMembers;
 
+	private Transform[] memberSlots;
+
 	//private float m_currTime = 0.0f;
 	//private float m_updateInterval = 1.0f;
 
@@ -33,9 +35,30 @@ public class RoomScript : MonoBehaviour
 	void Start()
 	{
 		m_assignedMembers = new List<MemberScript>();
-	}
+		memberSlots = new Transform[ maxMembers ];
 
-	void Update()
+		Transform slotContainer = transform.FindChild( "Member Slots" );
+
+		if( slotContainer != null && slotContainer.childCount == maxMembers )
+		{
+			for( int i = 0; i < maxMembers; i++ )
+            {
+				memberSlots[ i ] = slotContainer.GetChild( i );
+			}
+		}
+		else
+		{
+			// If there are no slots, just space out the spawn locations
+			for( int i = 0; i < maxMembers; i++ )
+			{
+				memberSlots[ i ] = new GameObject( "Member Slots" ).transform;
+				memberSlots[ i ].parent = transform;
+				memberSlots[ i ].position = new Vector3( 1 / maxMembers * i - 0.5f, 0.125f, 0 );
+            }
+        }
+    }
+    
+    void Update()
 	{
 		UpdateStats();
 
@@ -53,12 +76,23 @@ public class RoomScript : MonoBehaviour
 		if( m_assignedMembers.Count < maxMembers )
 		{
 			m_assignedMembers.Add( memberToAssign );
+
+			for( int i = 0; i < memberSlots.Length; i++ )
+			{
+				if( memberSlots[ i ].childCount == 0 )
+				{
+					memberToAssign.transform.parent = memberSlots[ i ];
+					memberToAssign.transform.position = memberSlots[ i ].position;
+					break;
+				}
+			}
 		}
 	}
 
 	public void RemoveMember( MemberScript memberToRemove )
 	{
 		m_assignedMembers.Remove( memberToRemove );
+		//memberToRemove.transform.parent = null;
 	}
 
 	public bool CanAssignMember()

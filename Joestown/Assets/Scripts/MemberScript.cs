@@ -27,8 +27,8 @@ public class MemberScript : MonoBehaviour
         RemoveFromRoom();
 		m_assignedRoom = newRoom;
 		
-		transform.position = newRoom.transform.position;
-		transform.position += new Vector3 ( Random.Range( -0.25f, 0.25f ), -0.05f, -1.0f );
+		//transform.position = newRoom.transform.position;
+		//transform.position += new Vector3 ( 0, 0, -1.0f );
 	}
     
     private void RemoveFromRoom()
