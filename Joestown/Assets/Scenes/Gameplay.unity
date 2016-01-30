@@ -290,33 +290,37 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11428324, guid: c81ed1f14b1079945954fba4ac80796a, type: 2}
+      propertyPath: buildingRoof
+      value: 
+      objectReference: {fileID: 1871878194}
     - target: {fileID: 22303668, guid: c81ed1f14b1079945954fba4ac80796a, type: 2}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 180774821}
     - target: {fileID: 22490994, guid: c81ed1f14b1079945954fba4ac80796a, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22490994, guid: c81ed1f14b1079945954fba4ac80796a, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22443750, guid: c81ed1f14b1079945954fba4ac80796a, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22467796, guid: c81ed1f14b1079945954fba4ac80796a, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22467796, guid: c81ed1f14b1079945954fba4ac80796a, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22470108, guid: c81ed1f14b1079945954fba4ac80796a, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c81ed1f14b1079945954fba4ac80796a, type: 2}
