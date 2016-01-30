@@ -108,6 +108,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 478170}
+  - 114: {fileID: 11421618}
   m_Layer: 5
   m_Name: UI_Manager_Object
   m_TagString: Untagged
@@ -340,6 +341,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &11421618
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6104d6536b77864cb63784ec6dd29e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pause_Controller: {fileID: 0}
 --- !u!114 &11449252
 MonoBehaviour:
   m_ObjectHideFlags: 1

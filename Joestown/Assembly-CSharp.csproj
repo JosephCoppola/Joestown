@@ -45,11 +45,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\BuildingScript.cs" />
      <Compile Include="Assets\Scripts\MainManagerScript.cs" />
      <Compile Include="Assets\Scripts\MemberScript.cs" />
      <Compile Include="Assets\Scripts\RoomScript.cs" />
      <None Include="Assets\Audio\Dummy.txt" />
+     <None Include="Assets\Animations\Dummy.txt" />
      <None Include="Assets\Resources\Dummy.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
