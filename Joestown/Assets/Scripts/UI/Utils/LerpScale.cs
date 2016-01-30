@@ -5,14 +5,13 @@ public class LerpScale : MonoBehaviour {
 
 	public float minScale;
 	public float maxScale;
-
-	// Use this for initialization
-	void Start () {
-	
-	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		float increment = Mathf.PingPong (Time.time*3, 1.2f);
+		
+		increment = increment.Remap (0.0f, 1.2f, minScale, maxScale);
+		
+		transform.localScale = new Vector3 (increment, increment, increment);
 	}
 }
