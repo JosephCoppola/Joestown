@@ -126,6 +126,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65b8113e3aec94e12a7edfbb53815fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  staminaDrainRate: 1
+  staminaRegenRate: 1
+  devotionDrainRate: 1
+  devotionRegenRate: 1
+  m_devotion: 50
+  m_stamina: 100
+  m_skepical: 0
 --- !u!61 &87172952
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -355,6 +362,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65b8113e3aec94e12a7edfbb53815fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  staminaDrainRate: 1
+  staminaRegenRate: 1
+  devotionDrainRate: 1
+  devotionRegenRate: 1
+  m_devotion: 50
+  m_stamina: 100
+  m_skepical: 0
 --- !u!61 &901889718
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -508,6 +522,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65b8113e3aec94e12a7edfbb53815fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  staminaDrainRate: 1
+  staminaRegenRate: 1
+  devotionDrainRate: 1
+  devotionRegenRate: 1
+  m_devotion: 50
+  m_stamina: 100
+  m_skepical: 0
 --- !u!61 &1194616743
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -686,6 +707,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65b8113e3aec94e12a7edfbb53815fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  staminaDrainRate: 1
+  staminaRegenRate: 1
+  devotionDrainRate: 1
+  devotionRegenRate: 1
+  m_devotion: 50
+  m_stamina: 100
+  m_skepical: 0
 --- !u!61 &1633642771
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -766,6 +794,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65b8113e3aec94e12a7edfbb53815fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  staminaDrainRate: 1
+  staminaRegenRate: 1
+  devotionDrainRate: 1
+  devotionRegenRate: 1
+  m_devotion: 50
+  m_stamina: 100
+  m_skepical: 0
 --- !u!61 &1636037509
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -942,6 +977,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65b8113e3aec94e12a7edfbb53815fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  staminaDrainRate: 1
+  staminaRegenRate: 1
+  devotionDrainRate: 1
+  devotionRegenRate: 1
+  m_devotion: 50
+  m_stamina: 100
+  m_skepical: 0
 --- !u!61 &2064515613
 BoxCollider2D:
   m_ObjectHideFlags: 0
