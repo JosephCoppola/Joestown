@@ -868,6 +868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faithBar: {fileID: 11464848}
+  notorietyBar: {fileID: 11468544}
 --- !u!114 &11431420
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6358,7 +6359,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1748, y: -50.0379639}
+  m_AnchoredPosition: {x: 1748, y: -50.0380859}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &22489062
