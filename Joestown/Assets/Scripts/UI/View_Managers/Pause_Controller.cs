@@ -8,8 +8,15 @@ public class Pause_Controller : MonoBehaviour {
 	
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
+	public void Pause()
+	{
+		gameObject.SetActive (true);
+		Time.timeScale = 0.0f;
+	}
+
+	public void Resume()
+	{
+		gameObject.SetActive (false);
+		Time.timeScale = 1.0f;
 	}
 }
