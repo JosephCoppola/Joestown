@@ -154,7 +154,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 150860}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.27999997, y: 0, z: 0}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 422756}
@@ -166,7 +166,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 139644}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.27999997, y: 0, z: 0}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 422756}
@@ -191,7 +191,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 143922}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .374000013, y: .144999996, z: -.289999962}
+  m_LocalPosition: {x: .282000005, y: .0829999968, z: -.289999962}
   m_LocalScale: {x: .0657573715, y: .0657573864, z: .0657573864}
   m_Children: []
   m_Father: {fileID: 428064}
@@ -203,7 +203,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112470}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.328000009, y: .144999996, z: -.289999992}
+  m_LocalPosition: {x: -.243000001, y: .0909999982, z: -.289999992}
   m_LocalScale: {x: .0657573715, y: .0657573864, z: .0657573864}
   m_Children: []
   m_Father: {fileID: 428064}
@@ -220,7 +220,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1.27999997, y: .639999986}
+  m_Size: {x: 1, y: .5}
 --- !u!61 &6154244
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -233,7 +233,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1.27999997, y: .639999986}
+  m_Size: {x: 1, y: .5}
 --- !u!61 &6193108
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -246,7 +246,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1.27999997, y: .639999986}
+  m_Size: {x: 1, y: .5}
 --- !u!95 &9502056
 Animator:
   serializedVersion: 3
