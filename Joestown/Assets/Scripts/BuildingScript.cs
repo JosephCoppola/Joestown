@@ -30,7 +30,8 @@ public class BuildingScript : MonoBehaviour
 		{
 			GameObject floor = Instantiate( floorsPrefab );
 
-			floor.transform.position = new Vector3( 0, 0.64f * m_numFloors, 0 );
+			floor.transform.position = floors.position;
+			floor.transform.position += new Vector3( 0, 0.64f * m_numFloors, 0 );
 			floor.transform.parent = floors;
 
 			roof.transform.position += new Vector3( 0, 0.64f, 0 );
