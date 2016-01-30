@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 using System.Collections;
 
 public class UI_Manager : MonoBehaviour {
@@ -34,9 +35,13 @@ public class UI_Manager : MonoBehaviour {
 		}
 	}
 
-	public void SpawnTextBlurb(string[] messages)
+	public void SpawnTextBlurb(List<string> messages)
 	{
+		GameObject textBlurb = Instantiate (textBlurbPrefab) as GameObject;
+		textBlurb.transform.SetParent (gameplay_Controller.gameObject.transform,false);
+		TextBlurb textBlurbScript = textBlurb.GetComponent<TextBlurb> ();
 
+		textBlurbScript.InitBlurb (messages);
 	}
 }
 

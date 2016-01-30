@@ -349,7 +349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd159338863b02e4b84c564d46c669e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  advanceArrow: {fileID: 0}
+  advanceArrow: {fileID: 104770}
+  message: {fileID: 11421336}
 --- !u!114 &11495612
 MonoBehaviour:
   m_ObjectHideFlags: 1
