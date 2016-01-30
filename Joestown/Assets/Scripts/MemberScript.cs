@@ -13,9 +13,9 @@ public class MemberScript : MonoBehaviour
 	
 	private RoomScript m_assignedRoom;
 	
-	private float m_devotion = 50.0f;
-	private float m_stamina = 100.0f;
-	private bool m_skepical = false;
+	public float m_devotion = 50.0f;
+	public float m_stamina = 100.0f;
+	public bool m_skepical = false;
 	
 	void Update ()
 	{
@@ -81,6 +81,14 @@ public class MemberScript : MonoBehaviour
 					break;
 				case RoomScript.RoomType.WORSHIP:
 					m_devotion += devotionRegenRate * Time.deltaTime;
+                    m_stamina -= staminaDrainRate * Time.deltaTime;
+                    CheckStamina();
+                    
+                    if( m_devotion >= MAX_DEVOTION )
+                    {
+                        m_devotion = MAX_DEVOTION;
+                        // Add to faith?
+                    }
 					break;
 				default:
 					break;
