@@ -96,7 +96,7 @@ GameObject:
   - 212: {fileID: 87172953}
   - 61: {fileID: 87172952}
   - 114: {fileID: 87172951}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cultist (2)
   m_TagString: Member
   m_Icon: {fileID: 0}
@@ -244,6 +244,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 150860, guid: d824a3890d8514d8da6933cdfe785dea, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 144542, guid: d824a3890d8514d8da6933cdfe785dea, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 139644, guid: d824a3890d8514d8da6933cdfe785dea, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d824a3890d8514d8da6933cdfe785dea, type: 2}
   m_IsPrefabParent: 0
@@ -300,27 +312,27 @@ Prefab:
       objectReference: {fileID: 180774821}
     - target: {fileID: 22490994, guid: c81ed1f14b1079945954fba4ac80796a, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22490994, guid: c81ed1f14b1079945954fba4ac80796a, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22443750, guid: c81ed1f14b1079945954fba4ac80796a, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22467796, guid: c81ed1f14b1079945954fba4ac80796a, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22467796, guid: c81ed1f14b1079945954fba4ac80796a, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22470108, guid: c81ed1f14b1079945954fba4ac80796a, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c81ed1f14b1079945954fba4ac80796a, type: 2}
@@ -336,7 +348,7 @@ GameObject:
   - 212: {fileID: 901889719}
   - 61: {fileID: 901889718}
   - 114: {fileID: 901889717}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cultist (5)
   m_TagString: Member
   m_Icon: {fileID: 0}
@@ -441,6 +453,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hightlight: {fileID: 1498642351}
+  defaultRaycastLayerMask:
+    serializedVersion: 2
+    m_Bits: 768
+  roomRaycastLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!4 &1050752666
 Transform:
   m_ObjectHideFlags: 0
@@ -509,7 +527,7 @@ GameObject:
   - 212: {fileID: 1194616744}
   - 61: {fileID: 1194616743}
   - 114: {fileID: 1194616742}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cultist
   m_TagString: Member
   m_Icon: {fileID: 0}
@@ -694,7 +712,7 @@ GameObject:
   - 212: {fileID: 1633642772}
   - 61: {fileID: 1633642771}
   - 114: {fileID: 1633642770}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cultist (4)
   m_TagString: Member
   m_Icon: {fileID: 0}
@@ -781,7 +799,7 @@ GameObject:
   - 212: {fileID: 1636037510}
   - 61: {fileID: 1636037509}
   - 114: {fileID: 1636037508}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cultist (3)
   m_TagString: Member
   m_Icon: {fileID: 0}
@@ -970,7 +988,7 @@ GameObject:
   - 212: {fileID: 2064515614}
   - 61: {fileID: 2064515613}
   - 114: {fileID: 2064515612}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cultist (1)
   m_TagString: Member
   m_Icon: {fileID: 0}
