@@ -23,11 +23,19 @@ public class UI_Manager : MonoBehaviour {
 		get { return gameplay_Controller; }
 	}
 
+	[SerializeField]
+	private GameObject textBlurbPrefab;
+
 	// Use this for initialization
 	void Start () {
 		if(instance == null)
 		{
 			instance = this;
 		}
+	}
+
+	public void SpawnTextBlurb(string[] messages)
+	{
+
 	}
 }
