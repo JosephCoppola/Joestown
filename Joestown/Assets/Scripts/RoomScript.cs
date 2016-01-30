@@ -4,9 +4,25 @@ using System.Collections.Generic;
 
 public class RoomScript : MonoBehaviour
 {
+    public enum RoomType
+    {
+        DEFAULT,
+        WORSHIP,
+        HOUSING
+    }
+
+    public RoomType roomType;
 	public int maxMembers = 4;
 
-	public List<MemberScript> m_assignedMembers;
+	private List<MemberScript> m_assignedMembers;
+
+    public RoomType Type
+    {
+        get
+        {
+            return roomType;
+        }
+    }
 
 	void Start()
 	{
