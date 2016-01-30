@@ -10,10 +10,19 @@ public class Gameplay_Controller : MonoBehaviour {
 	private Slider notorietyBar;
 	[SerializeField]
 	private Text memberCount;
+	[SerializeField]
+	private Button buildButton;
 
-	// Use this for initialization
-	void Start () {
+	[SerializeField]
+	private GameObject buildingRoof;
 
+	private Canvas ui_Canvas;
+	private RectTransform uiCanvasRect;
+
+	public void InitGameplayController(Canvas p_UICanvas)
+	{
+		ui_Canvas = p_UICanvas;
+		uiCanvasRect = ui_Canvas.GetComponent<RectTransform>();
 	}
 
 	//Accepts a value between 0 and 1, sets the faith bar value
@@ -32,5 +41,18 @@ public class Gameplay_Controller : MonoBehaviour {
 	public void SetMemberCount(int currentMembers, int maxMembers)
 	{
 		memberCount.text = currentMembers + "/" + maxMembers;
+	}
+
+	public void UpdateBuildButton()
+	{
+		Vector3 canvasPosition = ExtensionMethods.GetCanvasSpaceFromWorld(buildingRoof, uiCanvasRect, ui_Canvas);
+		buildButton.GetComponent<RectTransform>().position = new Vector3(canvasPosition.x, canvasPosition.y, canvasPosition.z);
+
+		//Check to grey out
+	}
+
+	void Update()
+	{
+		UpdateBuildButton();
 	}
 }
