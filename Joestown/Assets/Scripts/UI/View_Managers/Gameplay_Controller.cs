@@ -8,6 +8,8 @@ public class Gameplay_Controller : MonoBehaviour {
 	private Slider faithBar;
 	[SerializeField]
 	private Slider notorietyBar;
+	[SerializeField]
+	private Text memberCount;
 
 	// Use this for initialization
 	void Start () {
@@ -24,5 +26,11 @@ public class Gameplay_Controller : MonoBehaviour {
 	public void SetNotorietyAmount(float notorietyAmount)
 	{
 		notorietyBar.value = notorietyAmount;
+	}
+
+	//Sets the member count text
+	public void SetMemberCount(int currentMembers, int maxMembers)
+	{
+		memberCount.text = currentMembers + "/" + maxMembers;
 	}
 }
