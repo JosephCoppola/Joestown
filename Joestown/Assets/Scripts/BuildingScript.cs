@@ -9,7 +9,6 @@ public class BuildingScript : MonoBehaviour
 	public GameObject floorsPrefab;
 
 	private int m_numFloors = 1;
-	private int m_maxFloors = 5;
 
 	void Start ()
 	{
@@ -26,17 +25,14 @@ public class BuildingScript : MonoBehaviour
 
 	public void AddFloor()
 	{
-		if( m_numFloors < m_maxFloors )
-		{
-			GameObject floor = Instantiate( floorsPrefab );
+		GameObject floor = Instantiate( floorsPrefab );
 
-			floor.transform.position = floors.position;
-			floor.transform.position += new Vector3( 0, 0.64f * m_numFloors, 0 );
-			floor.transform.parent = floors;
+		floor.transform.position = floors.position;
+		floor.transform.position += new Vector3( 0, 0.5f * m_numFloors, 0 );
+		floor.transform.parent = floors;
 
-			roof.transform.position += new Vector3( 0, 0.64f, 0 );
+		roof.transform.position += new Vector3( 0, 0.5f, 0 );
 
-			m_numFloors++;
-		}
+		m_numFloors++;
 	}
 }

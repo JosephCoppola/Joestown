@@ -24,6 +24,6 @@ public class MemberScript : MonoBehaviour
 		m_assignedRoom = newRoom;
 
 		transform.position = newRoom.transform.position;
-		transform.position += new Vector3 (Random.Range( -0.5f, 0.5f ), -0.1f, -1.0f );
+		transform.position += new Vector3 (Random.Range( -0.25f, 0.25f ), -0.05f, -1.0f );
 	}
 }
