@@ -7,11 +7,6 @@ public class MainManagerScript : MonoBehaviour
 
 	private MemberScript m_selectedMember;
 
-	void Start ()
-	{
-	
-	}
-
 	void Update ()
 	{
 		if( Input.GetMouseButtonDown( 0 ) )
@@ -39,6 +34,7 @@ public class MainManagerScript : MonoBehaviour
 		if( hit.collider.tag == "Member" )
 		{
 			SelectMember( hit.collider.gameObject.GetComponent<MemberScript>() );
+            // open member ui
 		}
 		else if( hit.collider.tag == "Room" )
 		{
