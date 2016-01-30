@@ -16,6 +16,13 @@ public class UI_Manager : MonoBehaviour {
 		get { return pause_Controller;}
 	}
 
+	[SerializeField]
+	private Gameplay_Controller gameplay_Controller;
+	public Gameplay_Controller Gameplay_Controller
+	{
+		get { return gameplay_Controller; }
+	}
+
 	// Use this for initialization
 	void Start () {
 		if(instance == null)
