@@ -27,6 +27,11 @@ public class MainManagerScript : MonoBehaviour
 
 		if( hit.collider == null )
 		{
+			if( m_selectedMember != null )
+			{
+				DeselectMember();
+			}
+
 			// early return
 			return;
 		}
