@@ -5,7 +5,7 @@ public class MemberScript : MonoBehaviour
 {
 	public const float MAX_STAMINA = 100.0f;
 	public const float MAX_DEVOTION = 100.0f;
-	public const float TOWN_TIME = 60.0f;
+	public const float TOWN_TIME = 10.0f;
 	
 	public float staminaDrainRate = 1.0f;
 	public float staminaRegenRate = 1.0f;
@@ -20,7 +20,31 @@ public class MemberScript : MonoBehaviour
 	private float m_devotion = 50.0f;
 	private float m_stamina = 100.0f;
 	private float m_cellTime;
-	private bool m_skepical = false;
+	private bool m_skeptical = false;
+
+	public float Devotion
+	{
+		get
+		{
+			return m_devotion;
+		}
+	}
+
+	public float Stamina
+	{
+		get
+		{
+			return m_stamina;
+		}
+	}
+
+	public bool Skeptical
+	{
+		get
+		{
+			return m_skeptical;
+		}
+	}
 
 	void Start()
 	{
@@ -31,6 +55,13 @@ public class MemberScript : MonoBehaviour
 	void Update ()
 	{
 		DoRoom();
+	}
+
+	public void Init( float devotion, float stamina, bool skeptical )
+	{
+		m_devotion = devotion;
+		m_stamina = stamina;
+		m_skeptical = skeptical;
 	}
 	
 	public void ChangeRoom( RoomScript newRoom )
@@ -83,6 +114,11 @@ public class MemberScript : MonoBehaviour
 	{
 		m_collider.enabled = true;
 		m_spriteRenderer.enabled = true;
+
+		m_stamina -= 33.3f;
+		CheckStamina();
+
+		RecruitManager.Instance.GenerateNewbies( this );
 	}
     
     private void RemoveFromRoom()
@@ -101,7 +137,7 @@ public class MemberScript : MonoBehaviour
 			return;
 		}
 		
-		if( m_skepical )
+		if( m_skeptical )
 		{
 			if( m_assignedRoom.Type == RoomScript.RoomType.CELL )
 			{
@@ -109,7 +145,7 @@ public class MemberScript : MonoBehaviour
 
 				if( m_cellTime <= 0 )
 				{
-					m_skepical = false;
+					m_skeptical = false;
 				}
 			}
 			else
@@ -158,12 +194,12 @@ public class MemberScript : MonoBehaviour
 	    if( m_stamina >= MAX_STAMINA )
 	    {
 	    	m_stamina = MAX_STAMINA;
-	    	m_skepical = false;
+	    	m_skeptical = false;
 	    }
 	    else if( m_stamina < 0 )
 	    {
 	    	m_stamina = 0;
-	    	m_skepical = true;
+	    	m_skeptical = true;
 	    }
 	}
 }

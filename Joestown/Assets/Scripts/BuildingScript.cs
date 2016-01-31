@@ -23,6 +23,8 @@ public class BuildingScript : MonoBehaviour
 
 		m_numFloors++;
 
+		StatManager.MemberMax += 5;
+
 		EventManager.TriggerEvent( "AddedFloor" );
 	}
 

@@ -149,7 +149,15 @@ public class MainManagerScript : MonoBehaviour
 		}
 		else if( overObj.tag == "Town" )
 		{
-			SendMemberToTown();
+			if( unassignedMemberArea.childCount == 0 )
+			{
+				SendMemberToTown();
+			}
+			else
+			{
+				m_selectedMember.ResetPosition();
+				DeselectMember();
+			}
 		}
 	}
 

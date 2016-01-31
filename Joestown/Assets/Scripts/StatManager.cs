@@ -51,6 +51,19 @@ public class StatManager : MonoBehaviour
 		}
 	}
 
+	public static int MemberMax
+	{
+		get
+		{
+			return ms_instance.maxMemberCount;
+		}
+		set
+		{
+			ms_instance.maxMemberCount = value;
+			ms_instance.ui.SetMemberCount( ms_instance.memberCount, ms_instance.maxMemberCount );
+		}
+	}
+
 	void Awake ()
 	{
 		ms_instance = this;
