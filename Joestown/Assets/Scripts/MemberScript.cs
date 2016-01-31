@@ -108,6 +108,13 @@ public class MemberScript : MonoBehaviour
 		StartCoroutine( StollThroughTown() );
 	}
 
+	public void Sacrifice()
+	{
+		RemoveFromRoom();
+		StatManager.MemberCount--;
+		Destroy( gameObject );
+	}
+
 	private IEnumerator StollThroughTown()
 	{
 		yield return new WaitForSeconds( TOWN_TIME );
@@ -160,7 +167,7 @@ public class MemberScript : MonoBehaviour
 				{
                     RemoveFromRoom();
                     
-					StatManager.MemberCount++;
+					StatManager.MemberCount--;
                     Destroy( gameObject ); // Fade out or something...
 				}
 			}
