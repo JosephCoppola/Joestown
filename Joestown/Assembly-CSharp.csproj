@@ -48,7 +48,9 @@
      <Compile Include="Assets\Scripts\BuildingScript.cs" />
      <Compile Include="Assets\Scripts\CameraScaleScript.cs" />
      <Compile Include="Assets\Scripts\EventManager.cs" />
+     <Compile Include="Assets\Scripts\GameOverScript.cs" />
      <Compile Include="Assets\Scripts\MainManagerScript.cs" />
+     <Compile Include="Assets\Scripts\MainMenuScript.cs" />
      <Compile Include="Assets\Scripts\MemberScript.cs" />
      <Compile Include="Assets\Scripts\RecruitManager.cs" />
      <Compile Include="Assets\Scripts\RoomScript.cs" />

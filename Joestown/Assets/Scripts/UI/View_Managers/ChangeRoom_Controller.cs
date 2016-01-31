@@ -41,6 +41,8 @@ public class ChangeRoom_Controller : MonoBehaviour {
 	{
 		selectedRoom.roomType = (RoomScript.RoomType)selection;
 		display_Controller.SetScreenView(false);
+
+		selectedRoom.Change();
 	}
 
 	void OnDisable()

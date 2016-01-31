@@ -17,8 +17,18 @@ public class RoomScript : MonoBehaviour
 		SACRIFICE
     }
 
+	public GameObject defaultProps;
+	public GameObject housingProps;
+	public GameObject worshipProps;
+	public GameObject props;
+
+	public Sprite defaultSprite;
+	public Sprite worshipSprite;
+
     public RoomType roomType;
 	public int maxMembers = 4;
+
+	private SpriteRenderer m_spriteRenderer;
 
 	private List<MemberScript> m_assignedMembers;
 	public List<MemberScript> AssignedMembers
@@ -69,6 +79,8 @@ public class RoomScript : MonoBehaviour
 				memberSlots[ i ].position = new Vector3( 1 / maxMembers * i - 0.5f, 0.125f, 0 );
             }*/
         }
+
+		m_spriteRenderer = GetComponent<SpriteRenderer>();
     }
     
     void Update()
@@ -119,5 +131,31 @@ public class RoomScript : MonoBehaviour
 			default:
 				break;
 		}
+	}
+
+	public void Change()
+	{
+		Destroy( props );
+
+		switch( roomType )
+		{
+			case RoomType.DEFAULT:
+				props = Instantiate( defaultProps );
+				m_spriteRenderer.sprite = defaultSprite;
+				break;
+			case RoomType.HOUSING:
+				props = Instantiate( housingProps );
+				m_spriteRenderer.sprite = defaultSprite;
+				break;
+			case RoomType.WORSHIP:
+				props = Instantiate( worshipProps );
+				m_spriteRenderer.sprite = worshipSprite;
+				break;
+			default:
+				break;
+		}
+
+		props.transform.parent = transform;
+		props.transform.position = transform.position;
 	}
 }

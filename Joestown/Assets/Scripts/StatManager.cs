@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-//using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class StatManager : MonoBehaviour
@@ -55,6 +54,11 @@ public class StatManager : MonoBehaviour
 		{
 			ms_instance.notoriety = value;
 			ms_instance.ui.SetNotorietyAmount( ms_instance.notoriety * 0.01f );
+
+			if( ms_instance.notoriety >= 100 )
+			{
+				Application.LoadLevel( "GameOver" );
+			}
 		}
 	}
 	
@@ -71,7 +75,7 @@ public class StatManager : MonoBehaviour
 
 			if( ms_instance.memberCount <= 0 )
 			{
-				//SceneManager.LoadScene( "GameOver" );
+				Application.LoadLevel( "GameOver" );
 			}
 		}
 	}

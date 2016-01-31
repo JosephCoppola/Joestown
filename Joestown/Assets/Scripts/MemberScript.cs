@@ -6,7 +6,11 @@ public class MemberScript : MonoBehaviour
 	public const float MAX_STAMINA = 100.0f;
 	public const float MAX_DEVOTION = 100.0f;
 	public const float TOWN_TIME = 10.0f;
-	
+
+	public Sprite defaultSprite;
+	public Sprite prayerSprite;
+	public Sprite prisonerSprite;
+
 	public float staminaDrainRate = 1.0f;
 	public float staminaRegenRate = 1.0f;
 	public float devotionDrainRate = 1.0f;
@@ -74,8 +78,16 @@ public class MemberScript : MonoBehaviour
 		if( m_assignedRoom.Type == RoomScript.RoomType.CELL )
 		{
 			m_cellTime = Random.Range( 30.0f, 120.0f );
+			m_spriteRenderer.sprite = prisonerSprite;
 		}
-
+		else if( m_assignedRoom.Type == RoomScript.RoomType.WORSHIP )
+		{
+			m_spriteRenderer.sprite = prayerSprite;
+		}
+		else
+		{
+			m_spriteRenderer.sprite = defaultSprite;
+		}
 		//transform.position = newRoom.transform.position;
 		//transform.position += new Vector3 ( 0, 0, -1.0f );
 	}

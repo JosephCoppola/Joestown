@@ -55,6 +55,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65b8113e3aec94e12a7edfbb53815fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultSprite: {fileID: 21300000, guid: 5d96e7d31e63834418fa1fda2873fa0a, type: 3}
+  prayerSprite: {fileID: 21300000, guid: b0ecba274831e1344883a196ff9d735e, type: 3}
+  prisonerSprite: {fileID: 21300000, guid: f30e449366224fe47940349a0baeba60, type: 3}
   staminaDrainRate: 1
   staminaRegenRate: 1
   devotionDrainRate: 1
@@ -100,6 +103,21 @@ Prefab:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 5d96e7d31e63834418fa1fda2873fa0a,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: defaultSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5d96e7d31e63834418fa1fda2873fa0a,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: prisonerSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f30e449366224fe47940349a0baeba60,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: prayerSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b0ecba274831e1344883a196ff9d735e,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

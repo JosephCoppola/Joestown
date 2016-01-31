@@ -11,6 +11,11 @@ public class BuildingScript : MonoBehaviour
 	private int m_numFloors = 1;
 	private float roomHeight = 0.5f;
 
+	void Start()
+	{
+		AddFloor();
+	}
+
 	public void AddFloor()
 	{
 		GameObject floor = Instantiate( floorsPrefab );
