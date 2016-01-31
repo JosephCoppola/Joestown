@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 62838261}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Slot2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 76426213}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Member Slots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ GameObject:
   - 212: {fileID: 233679151}
   - 61: {fileID: 233679150}
   - 114: {fileID: 233679149}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room
   m_TagString: Room
   m_Icon: {fileID: 0}
@@ -613,7 +613,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 816614930}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Slot3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -697,7 +697,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 839603328}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad3f4776f41484032a1607944338958a, type: 3}
   m_Name: 
@@ -711,7 +711,7 @@ BoxCollider2D:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 839603328}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -758,7 +758,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 925158242}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Slot0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -840,7 +840,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 956732932}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Slot2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -867,7 +867,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1044512909}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Member Slots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1031,7 +1031,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1162408506}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Slot3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1170,7 +1170,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1420182544}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Slot0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1374,7 +1374,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1506749138}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Slot1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1404,7 +1404,7 @@ GameObject:
   - 212: {fileID: 1572717555}
   - 61: {fileID: 1572717554}
   - 114: {fileID: 1572717553}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Room
   m_TagString: Room
   m_Icon: {fileID: 0}
@@ -1522,7 +1522,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1608919825}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Slot1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
