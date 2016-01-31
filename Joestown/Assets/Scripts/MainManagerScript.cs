@@ -17,7 +17,7 @@ public class MainManagerScript : MonoBehaviour
 	private Vector3 m_lowerBounts;
 
 	private float m_clickTime = 0.0f;
-	private float m_scrollSpeed = 5.0f;
+	private float m_scrollSpeed = 2.5f;
 
 	private bool m_dragging = false;
 
