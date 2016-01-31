@@ -214,10 +214,12 @@ public class MainManagerScript : MonoBehaviour
 		if( mousePos.y > Screen.height - Screen.height * 0.1f )
 		{
 			Camera.main.transform.position = Vector3.MoveTowards( Camera.main.transform.position, m_upperBounds, m_scrollSpeed * Time.deltaTime );
+			ui_Manager.Gameplay_Controller.UpdateBuildButton();
 		}
 		else if( mousePos.y < Screen.height * 0.1f )
 		{
 			Camera.main.transform.position = Vector3.MoveTowards( Camera.main.transform.position, m_lowerBounts, m_scrollSpeed * Time.deltaTime );
+			ui_Manager.Gameplay_Controller.UpdateBuildButton();
 		}
 	}
 
