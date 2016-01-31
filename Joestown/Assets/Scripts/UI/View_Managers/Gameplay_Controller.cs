@@ -15,6 +15,8 @@ public class Gameplay_Controller : MonoBehaviour {
 
 	[SerializeField]
 	private SpriteRenderer buildingRoof;
+	[SerializeField]
+	private BuildingScript buildingScript;
 
 	private Canvas ui_Canvas;
 	private RectTransform uiCanvasRect;
@@ -62,6 +64,12 @@ public class Gameplay_Controller : MonoBehaviour {
 	public void BuildButtonDeselect()
 	{
 		Destroy(buildButton.gameObject.GetComponent<LerpScale>());
+	}
+
+	public void BuildButtonClick()
+	{
+		buildingScript.AddFloor();
+		UpdateBuildButton();
 	}
 
 	void Update()
