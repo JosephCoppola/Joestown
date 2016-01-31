@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class RecruitManager : MonoBehaviour
 {
@@ -16,21 +17,24 @@ public class RecruitManager : MonoBehaviour
 	public GameObject memberPrefab;
 	public Transform unassignedMemberArea;
 
+	private MainManagerScript m_mainMngr;
+
 	void Awake ()
 	{
 		ms_instance = this;
+	}
+
+	void Start()
+	{
+		m_mainMngr = GetComponent<MainManagerScript>();
 	}
 
 	public void GenerateNewbies( MemberScript recruiter )
 	{
 		int absMaxRecruits = StatManager.MemberMax - StatManager.MemberCount;
 
-		print( recruiter.Devotion );
-		print( Mathf.CeilToInt( recruiter.Devotion / 33.0f ) );
 		int recruits = Random.Range( 0, Mathf.CeilToInt( recruiter.Devotion / 33.4f ) ); // Up to 3 for max devotion
 		recruits = Mathf.Min( recruits, absMaxRecruits );
-
-		print( recruits );
 
 		for( int i = 0; i < recruits; i++ )
 		{
@@ -44,5 +48,10 @@ public class RecruitManager : MonoBehaviour
 		}
 
 		recruiter.transform.position = unassignedMemberArea.position + new Vector3( 0.4f, 0, 0 );
+
+		List<string> notification = new List<string>();
+		string text = "You follower returned with " + recruits + " new recruit" + ( ( recruits != 1 ) ? "s" : "" );
+		notification.Add( text );
+		m_mainMngr.UI_Mngr.SpawnTextBlurb( notification );
 	}
 }

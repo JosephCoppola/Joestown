@@ -24,6 +24,14 @@ public class MainManagerScript : MonoBehaviour
 	[SerializeField]
 	private UI_Manager ui_Manager;
 
+	public UI_Manager UI_Mngr
+	{
+		get
+		{
+			return ui_Manager;
+		}
+	}
+
 	void Start()
 	{
 		EventManager.AddEventListener( "AddedFloor", OnFloorAdded );
