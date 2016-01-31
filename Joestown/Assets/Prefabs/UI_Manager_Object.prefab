@@ -1359,7 +1359,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11427590}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11435324}
+        m_MethodName: ChangeRoom
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &11409804
@@ -1755,7 +1766,7 @@ MonoBehaviour:
   notorietyBar: {fileID: 11468544}
   memberCount: {fileID: 11444322}
   buildButton: {fileID: 11497568}
-  changeRoomController: {fileID: 0}
+  changeRoomController: {fileID: 11435324}
   buildingRoof: {fileID: 0}
   buildingScript: {fileID: 0}
 --- !u!114 &11431420
@@ -1823,7 +1834,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11464790}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11435324}
+        m_MethodName: ChangeRoom
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &11435324
@@ -2913,7 +2935,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11474982}
+      - m_Target: {fileID: 11400552}
         m_MethodName: SetScreenView
         m_Mode: 6
         m_Arguments:
@@ -3183,7 +3205,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11494404}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11435324}
+        m_MethodName: ChangeRoom
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!198 &19808332

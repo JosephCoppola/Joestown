@@ -14,8 +14,11 @@ public class Gameplay_Controller : MonoBehaviour {
 	private Button buildButton;
 	[SerializeField]
 	private ChangeRoom_Controller changeRoomController;
-
-
+	public ChangeRoom_Controller ChangeRoomController
+	{
+		get { return changeRoomController;}
+	}
+	
 	[SerializeField]
 	private SpriteRenderer buildingRoof;
 	[SerializeField]
@@ -24,11 +27,15 @@ public class Gameplay_Controller : MonoBehaviour {
 	private Canvas ui_Canvas;
 	private RectTransform uiCanvasRect;
 
+	void Awake()
+	{
+		EventManager.AddEventListener("OnResize", UpdateBuildButton);
+	}
+
 	public void InitGameplayController(Canvas p_UICanvas)
 	{
 		ui_Canvas = p_UICanvas;
 		uiCanvasRect = ui_Canvas.GetComponent<RectTransform>();
-		UpdateBuildButton();
 	}
 
 	//Accepts a value between 0 and 1, sets the faith bar value

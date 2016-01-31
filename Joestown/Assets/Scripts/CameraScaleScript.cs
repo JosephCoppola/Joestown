@@ -9,7 +9,7 @@ public class CameraScaleScript : MonoBehaviour
 	{
 		SetCameraScale ();
 	}
-	
+
 	void Update ()
 	{
 		// Yeah, I know. Deal with it
@@ -30,5 +30,7 @@ public class CameraScaleScript : MonoBehaviour
 		cam.orthographicSize = size;
 
 		lastWidth = Screen.width;
+
+		EventManager.TriggerEvent("OnResize");
 	}
 }

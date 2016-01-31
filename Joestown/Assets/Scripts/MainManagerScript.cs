@@ -13,6 +13,9 @@ public class MainManagerScript : MonoBehaviour
 	private float m_clickTime = 0.0f;
 	private bool m_dragging = false;
 
+	[SerializeField]
+	private UI_Manager ui_Manager;
+
 	void Update ()
 	{
 		if( Input.GetMouseButtonDown( 0 ) )
@@ -71,6 +74,8 @@ public class MainManagerScript : MonoBehaviour
 			}
 
 			// open assign room ui
+			ui_Manager.Gameplay_Controller.ChangeRoomController.Display_Controller.SetScreenView(true);
+			ui_Manager.Gameplay_Controller.ChangeRoomController.SelectRoom(clickedObj.GetComponent<RoomScript>());
 		}
 	}
 
