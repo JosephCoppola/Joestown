@@ -2210,7 +2210,7 @@ MonoBehaviour:
   pause_Controller: {fileID: 11479306}
   gameplay_Controller: {fileID: 11428324}
   memberPanel_Controller: {fileID: 11429194}
-  sacrificePrompt: {fileID: 0}
+  sacrificePrompt: {fileID: 11474982}
   textBlurbPrefab: {fileID: 147752, guid: e94532e9a75269f4b8bce8ed7d906be2, type: 2}
 --- !u!114 &11423414
 MonoBehaviour:
