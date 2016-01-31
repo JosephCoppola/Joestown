@@ -53,7 +53,7 @@ public class RecruitManager : MonoBehaviour
 		recruiter.transform.position = unassignedMemberArea.position + new Vector3( 0.4f, 0, 0 );
 
 		List<string> notification = new List<string>();
-		string text = "You follower returned with " + recruits + " new recruit" + ( ( recruits != 1 ) ? "s" : "" );
+		string text = "Your follower returned with " + recruits + " new recruit" + ( ( recruits != 1 ) ? "s" : "" );
 		notification.Add( text );
 		m_mainMngr.UI_Mngr.SpawnTextBlurb( notification );
 	}
