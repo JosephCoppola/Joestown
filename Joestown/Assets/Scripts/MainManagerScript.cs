@@ -103,7 +103,7 @@ public class MainManagerScript : MonoBehaviour
 			}
 
 			RoomScript room = clickedObj.GetComponent<RoomScript>();
-			if( room.Type != RoomScript.RoomType.SACRIFICE )
+			if( room.Type != RoomScript.RoomType.SACRIFICE && room.Type != RoomScript.RoomType.CELL )
 			{
 				if(room.AssignedMembers.Count == 0)
 				{
@@ -111,7 +111,7 @@ public class MainManagerScript : MonoBehaviour
 					ui_Manager.Gameplay_Controller.ChangeRoomController.SelectRoom(room);
 				}
 			}
-			else
+			else if( room.Type == RoomScript.RoomType.SACRIFICE )
 			{
 				if( room.AssignedMembers.Count > 0 )
 				{

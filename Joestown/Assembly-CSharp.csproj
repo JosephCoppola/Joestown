@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\UI\Utils\LerpScale.cs" />
      <Compile Include="Assets\Scripts\UI\View_Managers\ChangeRoom_Controller.cs" />
      <Compile Include="Assets\Scripts\UI\View_Managers\Gameplay_Controller.cs" />
+     <Compile Include="Assets\Scripts\UI\View_Managers\MemberPanel_Controller.cs" />
      <Compile Include="Assets\Scripts\UI\View_Managers\Pause_Controller.cs" />
      <None Include="Assets\Audio\Dummy.txt" />
      <None Include="Assets\Resources\Dummy.txt" />
