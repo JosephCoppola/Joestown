@@ -11,7 +11,10 @@ public class RoomScript : MonoBehaviour
     {
         DEFAULT,
         WORSHIP,
-        HOUSING
+        HOUSING,
+		CELL,
+		PUNCH,
+		SACRIFICE
     }
 
     public RoomType roomType;

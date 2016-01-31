@@ -19,6 +19,7 @@ public class MemberScript : MonoBehaviour
 	
 	private float m_devotion = 50.0f;
 	private float m_stamina = 100.0f;
+	private float m_cellTime;
 	private bool m_skepical = false;
 
 	void Start()
@@ -36,7 +37,12 @@ public class MemberScript : MonoBehaviour
 	{
         RemoveFromRoom();
 		m_assignedRoom = newRoom;
-		
+
+		if( m_assignedRoom.Type == RoomScript.RoomType.CELL )
+		{
+			m_cellTime = Random.Range( 30.0f, 120.0f );
+		}
+
 		//transform.position = newRoom.transform.position;
 		//transform.position += new Vector3 ( 0, 0, -1.0f );
 	}
@@ -97,10 +103,14 @@ public class MemberScript : MonoBehaviour
 		
 		if( m_skepical )
 		{
-			if( m_assignedRoom.Type == RoomScript.RoomType.HOUSING )
+			if( m_assignedRoom.Type == RoomScript.RoomType.CELL )
 			{
-				m_stamina += staminaRegenRate * Time.deltaTime;
-				CheckStamina();
+				m_cellTime -= Time.deltaTime;
+
+				if( m_cellTime <= 0 )
+				{
+					m_skepical = false;
+				}
 			}
 			else
 			{
