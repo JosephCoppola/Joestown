@@ -96,7 +96,7 @@ GameObject:
   - 212: {fileID: 87172953}
   - 61: {fileID: 87172952}
   - 114: {fileID: 87172951}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cultist (2)
   m_TagString: Member
   m_Icon: {fileID: 0}
@@ -244,6 +244,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 150860, guid: d824a3890d8514d8da6933cdfe785dea, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 144542, guid: d824a3890d8514d8da6933cdfe785dea, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 139644, guid: d824a3890d8514d8da6933cdfe785dea, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d824a3890d8514d8da6933cdfe785dea, type: 2}
   m_IsPrefabParent: 0
@@ -336,7 +348,7 @@ GameObject:
   - 212: {fileID: 901889719}
   - 61: {fileID: 901889718}
   - 114: {fileID: 901889717}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cultist (5)
   m_TagString: Member
   m_Icon: {fileID: 0}
@@ -421,6 +433,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1050752666}
   - 114: {fileID: 1050752665}
+  - 114: {fileID: 1050752667}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -440,6 +453,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hightlight: {fileID: 1498642351}
+  defaultRaycastLayerMask:
+    serializedVersion: 2
+    m_Bits: 768
+  roomRaycastLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!4 &1050752666
 Transform:
   m_ObjectHideFlags: 0
@@ -452,6 +471,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!114 &1050752667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1050752664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 724c90062200fde46b8ebbf47ef23f48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ui: {fileID: 1782212997}
 --- !u!1 &1135524645
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,7 +492,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1135524646}
   m_Layer: 0
-  m_Name: Cultists
+  m_Name: Unassigned Cultists
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -496,7 +527,7 @@ GameObject:
   - 212: {fileID: 1194616744}
   - 61: {fileID: 1194616743}
   - 114: {fileID: 1194616742}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cultist
   m_TagString: Member
   m_Icon: {fileID: 0}
@@ -681,7 +712,7 @@ GameObject:
   - 212: {fileID: 1633642772}
   - 61: {fileID: 1633642771}
   - 114: {fileID: 1633642770}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cultist (4)
   m_TagString: Member
   m_Icon: {fileID: 0}
@@ -768,7 +799,7 @@ GameObject:
   - 212: {fileID: 1636037510}
   - 61: {fileID: 1636037509}
   - 114: {fileID: 1636037508}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cultist (3)
   m_TagString: Member
   m_Icon: {fileID: 0}
@@ -844,6 +875,12 @@ SpriteRenderer:
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 29473e18d0d0c499d94b14e49f3cdde1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1782212997 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11428324, guid: c81ed1f14b1079945954fba4ac80796a,
+    type: 2}
+  m_PrefabInternal: {fileID: 851452670}
+  m_Script: {fileID: 11500000, guid: 7a6fef673224bb942a0f9ee51ff519f1, type: 3}
 --- !u!1 &1871878194
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,7 +988,7 @@ GameObject:
   - 212: {fileID: 2064515614}
   - 61: {fileID: 2064515613}
   - 114: {fileID: 2064515612}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cultist (1)
   m_TagString: Member
   m_Icon: {fileID: 0}

@@ -27,8 +27,8 @@ public class MemberScript : MonoBehaviour
         RemoveFromRoom();
 		m_assignedRoom = newRoom;
 		
-		transform.position = newRoom.transform.position;
-		transform.position += new Vector3 ( Random.Range( -0.25f, 0.25f ), -0.05f, 0.0f );
+		//transform.position = newRoom.transform.position;
+		//transform.position += new Vector3 ( 0, 0, -1.0f );
 	}
     
     private void RemoveFromRoom()
@@ -81,13 +81,12 @@ public class MemberScript : MonoBehaviour
 					break;
 				case RoomScript.RoomType.WORSHIP:
 					m_devotion += devotionRegenRate * Time.deltaTime;
-                    m_stamina -= staminaDrainRate * Time.deltaTime;
+                    m_stamina -= staminaDrainRate * Time.deltaTime * 0.5f;
                     CheckStamina();
                     
                     if( m_devotion >= MAX_DEVOTION )
                     {
                         m_devotion = MAX_DEVOTION;
-                        // Add to faith?
                     }
 					break;
 				default:
