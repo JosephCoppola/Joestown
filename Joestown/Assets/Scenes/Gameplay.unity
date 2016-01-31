@@ -255,6 +255,7 @@ GameObject:
   - 212: {fileID: 233679151}
   - 61: {fileID: 233679150}
   - 114: {fileID: 233679149}
+  - 114: {fileID: 233679152}
   m_Layer: 9
   m_Name: Sacrifice
   m_TagString: Room
@@ -336,6 +337,17 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &233679152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 233679147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e85d7c6bd8b051478a1832bf287bf21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &384882257
 GameObject:
   m_ObjectHideFlags: 0
@@ -2334,27 +2346,27 @@ Prefab:
       objectReference: {fileID: 1485265238}
     - target: {fileID: 22467796, guid: c81ed1f14b1079945954fba4ac80796a, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22467796, guid: c81ed1f14b1079945954fba4ac80796a, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22470108, guid: c81ed1f14b1079945954fba4ac80796a, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22490994, guid: c81ed1f14b1079945954fba4ac80796a, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22490994, guid: c81ed1f14b1079945954fba4ac80796a, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22443750, guid: c81ed1f14b1079945954fba4ac80796a, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c81ed1f14b1079945954fba4ac80796a, type: 2}
