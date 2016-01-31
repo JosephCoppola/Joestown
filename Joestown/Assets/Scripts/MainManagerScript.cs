@@ -73,6 +73,11 @@ public class MainManagerScript : MonoBehaviour
 
 	private void CheckClick()
 	{
+		if(UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+		{
+			return;
+		}
+
 		GameObject clickedObj = CheckMouseOver( defaultRaycastLayerMask );
 
 		if( clickedObj == null )
