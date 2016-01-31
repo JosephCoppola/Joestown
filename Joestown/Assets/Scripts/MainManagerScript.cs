@@ -90,12 +90,18 @@ public class MainManagerScript : MonoBehaviour
 				DeselectMember();
 			}
 
-			// open assign room ui
 			RoomScript room = clickedObj.GetComponent<RoomScript>();
-			if(room.AssignedMembers.Count == 0)
+			if( room.Type != RoomScript.RoomType.SACRIFICE )
 			{
-				ui_Manager.Gameplay_Controller.ChangeRoomController.Display_Controller.SetScreenView(true);
-				ui_Manager.Gameplay_Controller.ChangeRoomController.SelectRoom(room);
+				if(room.AssignedMembers.Count == 0)
+				{
+					ui_Manager.Gameplay_Controller.ChangeRoomController.Display_Controller.SetScreenView(true);
+					ui_Manager.Gameplay_Controller.ChangeRoomController.SelectRoom(room);
+				}
+			}
+			else
+			{
+				// open confirm sacrifice menu
 			}
 		}
 	}
