@@ -12,8 +12,6 @@ public class Gameplay_Controller : MonoBehaviour {
 	private Text memberCount;
 	[SerializeField]
 	private Button buildButton;
-	[SerializeField]
-	private GameObject buildButtonHighlight;
 
 	[SerializeField]
 	private SpriteRenderer buildingRoof;
@@ -56,12 +54,14 @@ public class Gameplay_Controller : MonoBehaviour {
 
 	public void BuildButtonSelect()
 	{
-		buildButtonHighlight.SetActive(true);
+		LerpScale buttonHover = buildButton.gameObject.AddComponent<LerpScale>();
+		buttonHover.maxScale = 1.2f;
+		buttonHover.minScale = 1.0f;
 	}
 
 	public void BuildButtonDeselect()
 	{
-		buildButtonHighlight.SetActive(false);
+		Destroy(buildButton.gameObject.GetComponent<LerpScale>());
 	}
 
 	void Update()
