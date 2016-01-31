@@ -30,6 +30,11 @@ public class MemberScript : MonoBehaviour
 		//transform.position = newRoom.transform.position;
 		//transform.position += new Vector3 ( 0, 0, -1.0f );
 	}
+
+	public void ResetPosition()
+	{
+		transform.position = transform.parent.position;
+	}
     
     private void RemoveFromRoom()
     {
