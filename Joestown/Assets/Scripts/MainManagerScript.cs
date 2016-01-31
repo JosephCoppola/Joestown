@@ -6,18 +6,35 @@ public class MainManagerScript : MonoBehaviour
 	public Transform hightlight;
 	public Transform unassignedMemberArea;
 
+	public BuildingScript building;
+
 	public LayerMask defaultRaycastLayerMask;
 	public LayerMask onReleaseRaycastLayerMask;
 
 	private MemberScript m_selectedMember;
+
+	private Vector3 m_upperBounds;
+	private Vector3 m_lowerBounts;
+
 	private float m_clickTime = 0.0f;
+	private float m_scrollSpeed = 5.0f;
+
 	private bool m_dragging = false;
 
 	[SerializeField]
 	private UI_Manager ui_Manager;
 
+	void Start()
+	{
+		EventManager.AddEventListener( "AddedFloor", OnFloorAdded );
+		OnFloorAdded();
+
+	}
+
 	void Update ()
 	{
+		CheckBounds();
+
 		if( Input.GetMouseButtonDown( 0 ) )
 		{
 			m_clickTime = Time.time;
@@ -173,5 +190,26 @@ public class MainManagerScript : MonoBehaviour
 
 		m_selectedMember.GoToTown();
 		DeselectMember();
+
+	}
+
+	private void CheckBounds()
+	{
+		Vector3 mousePos = Input.mousePosition;
+
+		if( mousePos.y > Screen.height - 60 )
+		{
+			Camera.main.transform.position = Vector3.MoveTowards( Camera.main.transform.position, m_upperBounds, m_scrollSpeed * Time.deltaTime );
+		}
+		else if( mousePos.y < 60 )
+		{
+			Camera.main.transform.position = Vector3.MoveTowards( Camera.main.transform.position, m_lowerBounts, m_scrollSpeed * Time.deltaTime );
+		}
+	}
+
+	private void OnFloorAdded()
+	{
+		m_upperBounds = new Vector3( 0, building.GetTopFloorY(), Camera.main.transform.position.z );
+		m_lowerBounts = new Vector3( 0, building.GetBottomFloorY(), Camera.main.transform.position.z );
 	}
 }
