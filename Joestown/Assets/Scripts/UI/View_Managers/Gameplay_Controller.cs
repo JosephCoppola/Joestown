@@ -30,6 +30,7 @@ public class Gameplay_Controller : MonoBehaviour {
 	void Awake()
 	{
 		EventManager.AddEventListener("OnResize", UpdateBuildButton);
+		EventManager.AddEventListener("OnFullFaith", EnableBuildButton);
 	}
 
 	public void InitGameplayController(Canvas p_UICanvas)
@@ -37,6 +38,7 @@ public class Gameplay_Controller : MonoBehaviour {
 		ui_Canvas = p_UICanvas;
 		uiCanvasRect = ui_Canvas.GetComponent<RectTransform>();
 		UpdateBuildButton();
+		DisableBuildButton();
 	}
 
 	//Accepts a value between 0 and 1, sets the faith bar value
@@ -84,10 +86,16 @@ public class Gameplay_Controller : MonoBehaviour {
 	{
 		buildingScript.AddFloor();
 		UpdateBuildButton();
+		DisableBuildButton();
 	}
 
 	public void DisableBuildButton()
 	{
+		buildButton.interactable = false;
+	}
 
+	public void EnableBuildButton()
+	{
+		buildButton.interactable = true;
 	}
 }
