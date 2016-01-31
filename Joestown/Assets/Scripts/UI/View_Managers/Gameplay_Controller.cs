@@ -12,6 +12,8 @@ public class Gameplay_Controller : MonoBehaviour {
 	private Text memberCount;
 	[SerializeField]
 	private Button buildButton;
+	[SerializeField]
+	private ChangeRoom_Controller changeRoomController;
 
 
 	[SerializeField]
