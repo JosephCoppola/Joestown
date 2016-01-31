@@ -116,7 +116,8 @@ public class MainManagerScript : MonoBehaviour
 				if( room.AssignedMembers.Count > 0 )
 				{
 					// open confirm sacrifice menu
-					room.GetComponent<SacrificeScript>().PerformSacrifice();
+					//room.GetComponent<SacrificeScript>().PerformSacrifice();
+					ui_Manager.SacrificePrompt.SetScreenView(true);
 				}
 			}
 		}

@@ -33,6 +33,13 @@ public class UI_Manager : MonoBehaviour {
 	}
 
 	[SerializeField]
+	private DisplayScreen sacrificePrompt;
+	public DisplayScreen SacrificePrompt
+	{
+		get { return sacrificePrompt; }
+	}
+
+	[SerializeField]
 	private GameObject textBlurbPrefab;
 
 	void Start()
