@@ -13,6 +13,7 @@ public class Gameplay_Controller : MonoBehaviour {
 	[SerializeField]
 	private Button buildButton;
 
+
 	[SerializeField]
 	private SpriteRenderer buildingRoof;
 	[SerializeField]
@@ -70,10 +71,5 @@ public class Gameplay_Controller : MonoBehaviour {
 	{
 		buildingScript.AddFloor();
 		UpdateBuildButton();
-	}
-
-	void Update()
-	{
-		//UpdateBuildButton();
 	}
 }
