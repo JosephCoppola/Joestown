@@ -6,7 +6,6 @@ public class UI_Manager : MonoBehaviour {
 
 	[SerializeField]
 	private Canvas ui_Canvas;
-	private RectTransform canvasRectTransform;
 	public Canvas UI_Canvas
 	{
 		get { return ui_Canvas; } 
@@ -27,12 +26,19 @@ public class UI_Manager : MonoBehaviour {
 	}
 
 	[SerializeField]
+	private MemberPanel_Controller memberPanel_Controller;
+	public MemberPanel_Controller MemberPanel_Controller
+	{
+		get { return memberPanel_Controller; }
+	}
+
+	[SerializeField]
 	private GameObject textBlurbPrefab;
 
 	void Start()
 	{
-		canvasRectTransform = ui_Canvas.GetComponent<RectTransform>();
 		gameplay_Controller.InitGameplayController(ui_Canvas);
+		memberPanel_Controller.InitMemberPanelController(ui_Canvas);
 	}
 
 	public void SpawnTextBlurb(List<string> messages)

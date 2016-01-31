@@ -94,7 +94,6 @@ public class MainManagerScript : MonoBehaviour
 		if( clickedObj.tag == "Member" )
 		{
 			SelectMember( clickedObj.GetComponent<MemberScript>() );
-            // open member ui
 		}
 		else if( clickedObj.tag == "Room" )
 		{
@@ -182,6 +181,8 @@ public class MainManagerScript : MonoBehaviour
 		hightlight.gameObject.SetActive( true );
 		hightlight.position = selectedMember.transform.position;
 		hightlight.parent = selectedMember.transform;
+
+		ui_Manager.MemberPanel_Controller.DisplayPanel(selectedMember);
 	}
 
 	private void DeselectMember()
@@ -193,6 +194,7 @@ public class MainManagerScript : MonoBehaviour
 		hightlight.gameObject.SetActive( false );
 
 		// Close UI
+		ui_Manager.MemberPanel_Controller.ClosePanel();
 	}
 
 	private void AssignSelectedMember( RoomScript room )

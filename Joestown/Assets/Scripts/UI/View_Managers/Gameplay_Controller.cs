@@ -86,4 +86,8 @@ public class Gameplay_Controller : MonoBehaviour {
 		UpdateBuildButton();
 	}
 
+	public void DisableBuildButton()
+	{
+
+	}
 }
