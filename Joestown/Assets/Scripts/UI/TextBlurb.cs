@@ -32,7 +32,6 @@ public class TextBlurb : MonoBehaviour {
 		else
 		{
 			currentMessageIndex = 0;
-			advanceArrow.SetActive(false);
 		}
 	}
 
