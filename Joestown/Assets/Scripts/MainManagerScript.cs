@@ -74,8 +74,12 @@ public class MainManagerScript : MonoBehaviour
 			}
 
 			// open assign room ui
-			ui_Manager.Gameplay_Controller.ChangeRoomController.Display_Controller.SetScreenView(true);
-			ui_Manager.Gameplay_Controller.ChangeRoomController.SelectRoom(clickedObj.GetComponent<RoomScript>());
+			RoomScript room = clickedObj.GetComponent<RoomScript>();
+			if(room.AssignedMembers.Count == 0)
+			{
+				ui_Manager.Gameplay_Controller.ChangeRoomController.Display_Controller.SetScreenView(true);
+				ui_Manager.Gameplay_Controller.ChangeRoomController.SelectRoom(room);
+			}
 		}
 	}
 

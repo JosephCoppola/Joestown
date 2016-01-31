@@ -18,6 +18,10 @@ public class RoomScript : MonoBehaviour
 	public int maxMembers = 4;
 
 	private List<MemberScript> m_assignedMembers;
+	public List<MemberScript> AssignedMembers
+	{
+		get { return m_assignedMembers; }
+	}
 
 	private Transform[] memberSlots;
 
