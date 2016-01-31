@@ -4,9 +4,10 @@ using System.Collections;
 public class MainManagerScript : MonoBehaviour
 {
 	public Transform hightlight;
+	public Transform unassignedMemberArea;
 
 	public LayerMask defaultRaycastLayerMask;
-	public LayerMask roomRaycastLayerMask;
+	public LayerMask onReleaseRaycastLayerMask;
 
 	private MemberScript m_selectedMember;
 
@@ -78,7 +79,7 @@ public class MainManagerScript : MonoBehaviour
 
 	private void HandleRelease()
 	{
-		GameObject overObj = CheckMouseOver( roomRaycastLayerMask );
+		GameObject overObj = CheckMouseOver( onReleaseRaycastLayerMask );
 
 		if( overObj == null )
 		{
@@ -91,13 +92,16 @@ public class MainManagerScript : MonoBehaviour
 		{
 			AssignSelectedMember( overObj.GetComponent<RoomScript>() );
 		}
+		else if( overObj.tag == "Town" )
+		{
+			SendMemberToTown();
+		}
 	}
 
 	private void SelectMember( MemberScript selectedMember )
 	{
 		m_selectedMember = selectedMember;
-		m_selectedMember.GetComponent<Collider2D>().enabled = false;
-		m_selectedMember.GetComponent<SpriteRenderer>().sortingOrder = 100;
+		selectedMember.SetSelected();
 
 		hightlight.gameObject.SetActive( true );
 		hightlight.position = selectedMember.transform.position;
@@ -106,8 +110,7 @@ public class MainManagerScript : MonoBehaviour
 
 	private void DeselectMember()
 	{
-		m_selectedMember.GetComponent<Collider2D>().enabled = true;
-		m_selectedMember.GetComponent<SpriteRenderer>().sortingOrder = 10;
+		m_selectedMember.SetDeselected();
 		m_selectedMember = null;
 
 		hightlight.parent = null;
@@ -126,7 +129,17 @@ public class MainManagerScript : MonoBehaviour
 		}
 		else
 		{
-
+			m_selectedMember.ResetPosition();
+			DeselectMember();
 		}
+	}
+
+	private void SendMemberToTown()
+	{
+		m_selectedMember.transform.parent = unassignedMemberArea;
+		m_selectedMember.ResetPosition();
+
+		m_selectedMember.GoToTown();
+		DeselectMember();
 	}
 }

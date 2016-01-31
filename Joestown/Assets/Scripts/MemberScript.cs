@@ -5,6 +5,7 @@ public class MemberScript : MonoBehaviour
 {
 	public const float MAX_STAMINA = 100.0f;
 	public const float MAX_DEVOTION = 100.0f;
+	public const float TOWN_TIME = 60.0f;
 	
 	public float staminaDrainRate = 1.0f;
 	public float staminaRegenRate = 1.0f;
@@ -12,11 +13,20 @@ public class MemberScript : MonoBehaviour
 	public float devotionRegenRate = 1.0f;
 	
 	private RoomScript m_assignedRoom;
+
+	private SpriteRenderer m_spriteRenderer;
+	private Collider2D m_collider;
 	
-	public float m_devotion = 50.0f;
-	public float m_stamina = 100.0f;
-	public bool m_skepical = false;
-	
+	private float m_devotion = 50.0f;
+	private float m_stamina = 100.0f;
+	private bool m_skepical = false;
+
+	void Start()
+	{
+		m_spriteRenderer = GetComponent<SpriteRenderer>();
+		m_collider = GetComponent<Collider2D>();
+	}
+
 	void Update ()
 	{
 		DoRoom();
@@ -34,6 +44,39 @@ public class MemberScript : MonoBehaviour
 	public void ResetPosition()
 	{
 		transform.position = transform.parent.position;
+	}
+
+	public void SetSelected()
+	{
+		m_collider.enabled = false;
+		m_spriteRenderer.sortingOrder = 100;
+	}
+
+	public void SetDeselected()
+	{
+		m_collider.enabled = true;
+		m_spriteRenderer.sortingOrder = 10;
+	}
+
+	public void GoToTown()
+	{
+		m_assignedRoom = null;
+		m_collider.enabled = false;
+		m_spriteRenderer.enabled = false;
+
+		StartCoroutine( StollThroughTown() );
+	}
+
+	private IEnumerator StollThroughTown()
+	{
+		yield return new WaitForSeconds( TOWN_TIME );
+		ReturnFromTown();
+	}
+
+	private void ReturnFromTown()
+	{
+		m_collider.enabled = true;
+		m_spriteRenderer.enabled = true;
 	}
     
     private void RemoveFromRoom()
