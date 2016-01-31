@@ -303,7 +303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &137658
 GameObject:
   m_ObjectHideFlags: 1
@@ -1755,6 +1755,7 @@ MonoBehaviour:
   notorietyBar: {fileID: 11468544}
   memberCount: {fileID: 11444322}
   buildButton: {fileID: 11497568}
+  changeRoomController: {fileID: 0}
   buildingRoof: {fileID: 0}
   buildingScript: {fileID: 0}
 --- !u!114 &11431420
