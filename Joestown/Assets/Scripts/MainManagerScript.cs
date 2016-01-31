@@ -10,23 +10,36 @@ public class MainManagerScript : MonoBehaviour
 	public LayerMask onReleaseRaycastLayerMask;
 
 	private MemberScript m_selectedMember;
+	private float m_clickTime = 0.0f;
+	private bool m_dragging = false;
 
 	void Update ()
 	{
-		if( m_selectedMember != null )
+		if( Input.GetMouseButtonDown( 0 ) )
 		{
-			if( Input.GetMouseButton( 0 ) )
+			m_clickTime = Time.time;
+			CheckClick();
+		}
+		else if( m_selectedMember != null )
+		{
+			if( Input.GetMouseButton( 0 ) && !m_dragging )
+			{
+				float clickLength = Time.time - m_clickTime;
+				if( clickLength > 0.1f )
+				{
+					m_dragging = true;
+				}
+			}
+
+			if( m_dragging )
 			{
 				HandleDrag();
 			}
-			else if( Input.GetMouseButtonUp( 0 ) )
+
+			if( Input.GetMouseButtonUp( 0 ) )
 			{
 				HandleRelease();
 			}
-		}
-		else if( Input.GetMouseButtonDown( 0 ) )
-		{
-			CheckClick();
 		}
 	}
 
@@ -36,6 +49,11 @@ public class MainManagerScript : MonoBehaviour
 
 		if( clickedObj == null )
 		{
+			if( m_selectedMember != null )
+			{
+				DeselectMember();
+			}
+
 			// Early return
 			return;
 		}
@@ -47,6 +65,11 @@ public class MainManagerScript : MonoBehaviour
 		}
 		else if( clickedObj.tag == "Room" )
 		{
+			if( m_selectedMember != null )
+			{
+				DeselectMember();
+			}
+
 			// open assign room ui
 		}
 	}
@@ -72,6 +95,13 @@ public class MainManagerScript : MonoBehaviour
 
 	private void HandleRelease()
 	{
+		if( !m_dragging )
+		{
+			m_selectedMember.SetDeselected();
+			return;
+		}
+
+		m_dragging = false;
 		GameObject overObj = CheckMouseOver( onReleaseRaycastLayerMask );
 
 		if( overObj == null )

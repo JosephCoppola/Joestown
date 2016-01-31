@@ -10,19 +10,6 @@ public class BuildingScript : MonoBehaviour
 
 	private int m_numFloors = 1;
 
-	void Start ()
-	{
-	
-	}
-
-	void Update ()
-	{
-		if( Input.GetKeyDown( KeyCode.Space ) )
-		{
-			AddFloor();
-		}
-	}
-
 	public void AddFloor()
 	{
 		GameObject floor = Instantiate( floorsPrefab );
