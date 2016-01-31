@@ -217,7 +217,6 @@ public class MainManagerScript : MonoBehaviour
 
 		m_selectedMember.GoToTown();
 		DeselectMember();
-
 	}
 
 	private void CheckBounds()

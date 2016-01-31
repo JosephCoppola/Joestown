@@ -9,8 +9,8 @@ public class StatManager : MonoBehaviour
 
 	private float faith = 50.0f;
 	private float notoriety = 0.0f;
-	private int memberCount = 6;
-	private int maxMemberCount = 10;
+	private int memberCount = 0;
+	private int maxMemberCount = 5;
 	
 	public static float Faith
 	{
@@ -48,6 +48,11 @@ public class StatManager : MonoBehaviour
 		{
 			ms_instance.memberCount = value;
 			ms_instance.ui.SetMemberCount( ms_instance.memberCount, ms_instance.maxMemberCount );
+
+			if( ms_instance.memberCount <= 0 )
+			{
+				// gameover
+			}
 		}
 	}
 

@@ -11,7 +11,9 @@ public class MemberScript : MonoBehaviour
 	public float staminaRegenRate = 1.0f;
 	public float devotionDrainRate = 1.0f;
 	public float devotionRegenRate = 1.0f;
-	
+
+	private Vector3 m_lastPos;
+
 	private RoomScript m_assignedRoom;
 
 	private SpriteRenderer m_spriteRenderer;
@@ -80,11 +82,12 @@ public class MemberScript : MonoBehaviour
 
 	public void ResetPosition()
 	{
-		transform.position = transform.parent.position;
+		transform.position = m_lastPos;
 	}
 
 	public void SetSelected()
 	{
+		m_lastPos = transform.position;
 		m_collider.enabled = false;
 		m_spriteRenderer.sortingOrder = 100;
 	}
@@ -157,8 +160,8 @@ public class MemberScript : MonoBehaviour
 				{
                     RemoveFromRoom();
                     
+					StatManager.MemberCount++;
                     Destroy( gameObject ); // Fade out or something...
-                    // update population
 				}
 			}
 		}

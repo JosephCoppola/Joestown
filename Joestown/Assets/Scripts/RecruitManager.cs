@@ -27,6 +27,8 @@ public class RecruitManager : MonoBehaviour
 	void Start()
 	{
 		m_mainMngr = GetComponent<MainManagerScript>();
+
+		InitPopulation();
 	}
 
 	public void GenerateNewbies( MemberScript recruiter )
@@ -45,6 +47,7 @@ public class RecruitManager : MonoBehaviour
 			MemberScript ms = recruit.GetComponent<MemberScript>();
 			bool startSkept = Random.Range( 0, recruiter.Devotion ) < 10 ? true : false;
 			ms.Init( Random.Range( 10.0f, recruiter.Devotion ), Random.Range( 25.0f, 100.0f ), startSkept );
+			StatManager.MemberCount++;
 		}
 
 		recruiter.transform.position = unassignedMemberArea.position + new Vector3( 0.4f, 0, 0 );
@@ -53,5 +56,19 @@ public class RecruitManager : MonoBehaviour
 		string text = "You follower returned with " + recruits + " new recruit" + ( ( recruits != 1 ) ? "s" : "" );
 		notification.Add( text );
 		m_mainMngr.UI_Mngr.SpawnTextBlurb( notification );
+	}
+
+	private void InitPopulation()
+	{
+		for( int i = 0; i < 4; i++ )
+		{
+			GameObject recruit = Instantiate( memberPrefab );
+			recruit.transform.parent = unassignedMemberArea;
+			recruit.transform.position = unassignedMemberArea.position - new Vector3( 0.2f * ( i - 1 ), 0, 0 );
+			
+			MemberScript ms = recruit.GetComponent<MemberScript>();
+			ms.Init( 50, 100, false );
+            StatManager.MemberCount++;
+        }
 	}
 }
