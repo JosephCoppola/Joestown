@@ -103,7 +103,7 @@ public class MainManagerScript : MonoBehaviour
 			}
 
 			RoomScript room = clickedObj.GetComponent<RoomScript>();
-			if( room.Type != RoomScript.RoomType.SACRIFICE && room.Type != RoomScript.RoomType.CELL )
+			if( room.Type != RoomScript.RoomType.SACRIFICE && room.Type != RoomScript.RoomType.CELL && RoomScript.RoomType != RoomScript.RoomType.PUNCH )
 			{
 				if(room.AssignedMembers.Count == 0)
 				{
