@@ -26,7 +26,7 @@ public class RoomScript : MonoBehaviour
 		get { return m_assignedMembers; }
 	}
 
-	public Transform[] memberSlots;
+	private Transform[] memberSlots;
 
     public RoomType Type
     {

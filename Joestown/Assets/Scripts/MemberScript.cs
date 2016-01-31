@@ -97,6 +97,7 @@ public class MemberScript : MonoBehaviour
 
 	public void GoToTown()
 	{
+		RemoveFromRoom();
 		m_assignedRoom = null;
 		m_collider.enabled = false;
 		m_spriteRenderer.enabled = false;
