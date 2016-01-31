@@ -63,4 +63,11 @@ public static class ExtensionMethods {
 		
 		return new Vector3 (0f,0f,0f);
 	}
+
+	public static void SetGameobjectChildernActive(GameObject gameObject, bool active)
+	{
+		foreach (Transform child in gameObject.transform) {
+			child.gameObject.SetActive(active);
+		}
+	}
 }
