@@ -82,6 +82,8 @@ public class MainManagerScript : MonoBehaviour
 
 		if( overObj == null )
 		{
+			m_selectedMember.ResetPosition();
+			DeselectMember();
 			return;
 		}
 
@@ -95,6 +97,7 @@ public class MainManagerScript : MonoBehaviour
 	{
 		m_selectedMember = selectedMember;
 		m_selectedMember.GetComponent<Collider2D>().enabled = false;
+		m_selectedMember.GetComponent<SpriteRenderer>().sortingOrder = 100;
 
 		hightlight.gameObject.SetActive( true );
 		hightlight.position = selectedMember.transform.position;
@@ -104,6 +107,7 @@ public class MainManagerScript : MonoBehaviour
 	private void DeselectMember()
 	{
 		m_selectedMember.GetComponent<Collider2D>().enabled = true;
+		m_selectedMember.GetComponent<SpriteRenderer>().sortingOrder = 10;
 		m_selectedMember = null;
 
 		hightlight.parent = null;
@@ -114,11 +118,15 @@ public class MainManagerScript : MonoBehaviour
 
 	private void AssignSelectedMember( RoomScript room )
 	{
-		if( m_selectedMember != null && room.CanAssignMember() )
+		if( room.CanAssignMember() )
 		{
 			room.AssignMember( m_selectedMember );
 			m_selectedMember.ChangeRoom( room );
 			DeselectMember();
+		}
+		else
+		{
+
 		}
 	}
 }
