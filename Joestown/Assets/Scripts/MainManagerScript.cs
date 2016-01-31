@@ -114,7 +114,11 @@ public class MainManagerScript : MonoBehaviour
 			}
 			else
 			{
-				// open confirm sacrifice menu
+				if( room.AssignedMembers.Count > 0 )
+				{
+					// open confirm sacrifice menu
+					room.GetComponent<SacrificeScript>().PerformSacrifice();
+				}
 			}
 		}
 	}

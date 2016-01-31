@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class StatManager : MonoBehaviour
@@ -8,6 +9,7 @@ public class StatManager : MonoBehaviour
 	public Gameplay_Controller ui;
 
 	private float faith = 50.0f;
+	private float maxFaith = 100.0f;
 	private float notoriety = 0.0f;
 	private int memberCount = 0;
 	private int maxMemberCount = 5;
@@ -21,7 +23,24 @@ public class StatManager : MonoBehaviour
 		set
 		{
 			ms_instance.faith = value;
-			ms_instance.ui.SetFaithAmount( ms_instance.faith * 0.01f );
+			if( ms_instance.faith > ms_instance.maxFaith )
+			{
+				ms_instance.faith = ms_instance.maxFaith;
+			}
+			ms_instance.ui.SetFaithAmount( ms_instance.faith / ms_instance.maxFaith );
+		}
+	}
+
+	public static float MaxFaith
+	{
+		get
+		{
+			return ms_instance.maxFaith;
+		}
+		set
+		{
+			ms_instance.maxFaith = value;
+			ms_instance.ui.SetFaithAmount( ms_instance.faith / ms_instance.maxFaith );
 		}
 	}
 	
@@ -51,7 +70,7 @@ public class StatManager : MonoBehaviour
 
 			if( ms_instance.memberCount <= 0 )
 			{
-				// gameover
+				SceneManager.LoadScene( "GameOver" );
 			}
 		}
 	}
@@ -76,8 +95,8 @@ public class StatManager : MonoBehaviour
 	
 	void Start()
 	{
-		ms_instance.ui.SetFaithAmount( ms_instance.faith );
-		ms_instance.ui.SetNotorietyAmount( ms_instance.notoriety );
+		ms_instance.ui.SetFaithAmount( ms_instance.faith * 0.01f );
+		ms_instance.ui.SetNotorietyAmount( ms_instance.notoriety * 0.01f );
 		ms_instance.ui.SetMemberCount( ms_instance.memberCount, ms_instance.maxMemberCount );
 	}
 }

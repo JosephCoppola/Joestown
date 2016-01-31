@@ -36,6 +36,14 @@ public class RoomScript : MonoBehaviour
         }
     }
 
+	public Transform[] MemberSlots
+	{
+		get
+		{
+			return memberSlots;
+		}
+	}
+
 	void Start()
 	{
 		m_assignedMembers = new List<MemberScript>();

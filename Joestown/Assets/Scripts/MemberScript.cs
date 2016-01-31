@@ -169,6 +169,7 @@ public class MemberScript : MonoBehaviour
 		{
 			switch( m_assignedRoom.Type )
 			{
+				case RoomScript.RoomType.SACRIFICE: // Fallthrough intentional
 				case RoomScript.RoomType.DEFAULT:
 					m_stamina -= staminaDrainRate * Time.deltaTime;
 					CheckStamina();

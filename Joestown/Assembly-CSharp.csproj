@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\MemberScript.cs" />
      <Compile Include="Assets\Scripts\RecruitManager.cs" />
      <Compile Include="Assets\Scripts\RoomScript.cs" />
+     <Compile Include="Assets\Scripts\SacrificeScript.cs" />
      <Compile Include="Assets\Scripts\StatManager.cs" />
      <Compile Include="Assets\Scripts\UI\TextBlurb.cs" />
      <Compile Include="Assets\Scripts\UI\UI_Manager.cs" />

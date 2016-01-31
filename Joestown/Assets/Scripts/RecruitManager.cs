@@ -35,7 +35,7 @@ public class RecruitManager : MonoBehaviour
 	{
 		int absMaxRecruits = StatManager.MemberMax - StatManager.MemberCount;
 
-		int recruits = Random.Range( 0, Mathf.CeilToInt( recruiter.Devotion / 33.4f ) ); // Up to 3 for max devotion
+		int recruits = Random.Range( 0, Mathf.CeilToInt( recruiter.Devotion / 25.0f ) ); // Up to 3 for max devotion
 		recruits = Mathf.Min( recruits, absMaxRecruits );
 
 		for( int i = 0; i < recruits; i++ )
