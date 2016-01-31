@@ -197,11 +197,11 @@ public class MainManagerScript : MonoBehaviour
 	{
 		Vector3 mousePos = Input.mousePosition;
 
-		if( mousePos.y > Screen.height - 60 )
+		if( mousePos.y > Screen.height - Screen.height * 0.1f )
 		{
 			Camera.main.transform.position = Vector3.MoveTowards( Camera.main.transform.position, m_upperBounds, m_scrollSpeed * Time.deltaTime );
 		}
-		else if( mousePos.y < 60 )
+		else if( mousePos.y < Screen.height * 0.1f )
 		{
 			Camera.main.transform.position = Vector3.MoveTowards( Camera.main.transform.position, m_lowerBounts, m_scrollSpeed * Time.deltaTime );
 		}
