@@ -12,9 +12,11 @@ public class Gameplay_Controller : MonoBehaviour {
 	private Text memberCount;
 	[SerializeField]
 	private Button buildButton;
+	[SerializeField]
+	private GameObject buildButtonHighlight;
 
 	[SerializeField]
-	private GameObject buildingRoof;
+	private SpriteRenderer buildingRoof;
 
 	private Canvas ui_Canvas;
 	private RectTransform uiCanvasRect;
@@ -23,6 +25,7 @@ public class Gameplay_Controller : MonoBehaviour {
 	{
 		ui_Canvas = p_UICanvas;
 		uiCanvasRect = ui_Canvas.GetComponent<RectTransform>();
+		UpdateBuildButton();
 	}
 
 	//Accepts a value between 0 and 1, sets the faith bar value
@@ -45,14 +48,24 @@ public class Gameplay_Controller : MonoBehaviour {
 
 	public void UpdateBuildButton()
 	{
-		Vector3 canvasPosition = ExtensionMethods.GetCanvasSpaceFromWorld(buildingRoof, uiCanvasRect, ui_Canvas);
-		buildButton.GetComponent<RectTransform>().position = new Vector3(canvasPosition.x, canvasPosition.y, canvasPosition.z);
+		Vector3 canvasPosition = ExtensionMethods.GetCanvasSpaceFromWorld(buildingRoof.gameObject, uiCanvasRect, ui_Canvas);
+		buildButton.transform.parent.GetComponent<RectTransform>().position = new Vector3(canvasPosition.x, canvasPosition.y + 30.0f, canvasPosition.z);
 
 		//Check to grey out
 	}
 
+	public void BuildButtonSelect()
+	{
+		buildButtonHighlight.SetActive(true);
+	}
+
+	public void BuildButtonDeselect()
+	{
+		buildButtonHighlight.SetActive(false);
+	}
+
 	void Update()
 	{
-		UpdateBuildButton();
+		//UpdateBuildButton();
 	}
 }
