@@ -47,14 +47,7 @@ public class MainManagerScript : MonoBehaviour
 		}
 		else if( clickedObj.tag == "Room" )
 		{
-			/*if( m_selectedMember != null )
-			{
-				AssignSelectedMember( hit.collider.gameObject.GetComponent<RoomScript>() );
-			}
-			else
-			{
-				// Select room
-			}*/
+			// open assign room ui
 		}
 	}
 
