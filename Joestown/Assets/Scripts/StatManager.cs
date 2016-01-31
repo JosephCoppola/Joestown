@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+//using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class StatManager : MonoBehaviour
@@ -23,9 +23,10 @@ public class StatManager : MonoBehaviour
 		set
 		{
 			ms_instance.faith = value;
-			if( ms_instance.faith > ms_instance.maxFaith )
+			if( ms_instance.faith >= ms_instance.maxFaith )
 			{
 				ms_instance.faith = ms_instance.maxFaith;
+				EventManager.TriggerEvent("OnFullFaith");
 			}
 			ms_instance.ui.SetFaithAmount( ms_instance.faith / ms_instance.maxFaith );
 		}
@@ -70,7 +71,7 @@ public class StatManager : MonoBehaviour
 
 			if( ms_instance.memberCount <= 0 )
 			{
-				SceneManager.LoadScene( "GameOver" );
+				//SceneManager.LoadScene( "GameOver" );
 			}
 		}
 	}
